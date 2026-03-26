@@ -1,0 +1,43 @@
+SELECT ID
+	 , SUBJECT
+	 , CONTENT
+	 , EMAIL
+	 , VIEW_CNT
+	 , CRT_DT
+	 , MDFY_DT
+	 , FILE_NAME
+	 , ORIGIN_FILE_NAME
+  FROM BOARD
+;
+
+INSERT INTO BOARD 
+( ID
+, SUBJECT
+, CONTENT
+, EMAIL
+, CRT_DT) VALUES 
+( 'BD-' || TO_CHAR(SYSDATE, 'YYMMDD-') || LPAD(SEQ_BOARD_PK.NEXTVAL, 6, '0')
+, #{subject}
+, #{content}
+, #{email}
+, SYSDATE)
+;
+
+SELECT 'BD-' || TO_CHAR(SYSDATE, 'YYMMDD-') || LPAD(SEQ_BOARD_PK.NEXTVAL, 6, '0') AS ID
+  FROM DUAL
+;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
